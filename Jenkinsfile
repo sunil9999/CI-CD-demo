@@ -1,5 +1,4 @@
-import groovy.transform.Field
-node {
+pipeline {
   agent any
   
   tools
