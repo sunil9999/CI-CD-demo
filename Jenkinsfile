@@ -20,7 +20,7 @@ pipeline {
     stage ('docker build and tag') {
       steps {
         sh 'docker build -t my-webapp:latest .'
-        sh 'docker tag my-webapp sunilraju99/my-webapp:1.0'
+        sh 'docker tag my-webapp sunilraju99/my-webapp:latest'
       }
     }
   }
