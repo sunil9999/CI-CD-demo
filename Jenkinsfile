@@ -23,18 +23,13 @@ pipeline {
         sh 'docker tag my-webapp sunilraju99/my-webapp:latest'
       }
     }
-    stage('Login') {
-
-			steps {
-				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $ID_dockerhub --password-Sunil@123'
-			}
+    stage ('publish image to dockerhub') {
+	 steps {
+	    //withDockerResitry ([ credentialsId: "ID_dockerhub", url: "" ])
+		 withDockerRegistry(credentialsId: 'ID_dockerhub', url: 'https://hub.docker.com/repository/docker/sunilraju99/my-webapp1'){
+		sh 'docker push sunilraju99/my-webapp:1.0'
 		}
-
-		stage('Push') {
-
-			steps {
-				sh 'docker push sunilraju99/my-webapp:latest'
-			}
+		}
 		}
 	}
 	
