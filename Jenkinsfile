@@ -25,7 +25,7 @@ pipeline {
     }
     stage ('publish image to dockerhub') {
 	 steps {
-	    withDockerResitry ([ credentialsId: "dockerhub", url: "" ]) {
+	    withDockerRegistry ([ credentialsId: "dockerhub", url: "" ]) {
 		sh 'docker push sunilraju99/my-webapp:latest'
 		}
 		}
