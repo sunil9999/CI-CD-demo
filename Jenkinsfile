@@ -26,8 +26,7 @@ pipeline {
     stage ('publish image to dockerhub') {
 	 steps {
 	    //withDockerResitry ([ credentialsId: "ID_dockerhub", url: "" ])
-		 //withDockerRegistry(credentialsId: 'ID_dockerhub', url: 'https://hub.docker.com/repository/docker/sunilraju99/my-webapp1')
-		 withDockerRegistry(credentialsId: 'ID_dockerhub', 'docker login --username xxx --password yyy'){
+		 withDockerRegistry(credentialsId: 'ID_dockerhub', url: 'https://hub.docker.com/repository/docker/sunilraju99/my-webapp1'){
 		sh 'docker push sunilraju99/my-webapp:1.0'
 		}
 		}
