@@ -43,7 +43,7 @@ pipeline {
              
             steps {
                 //sh "docker -H ssh://jenkins@172.31.10.0 run sunilraju99/my-webapp"
-		    ssh jenkins@172.31.10.0 'docker run sunilraju99/my-webapp'
+		   sh ssh jenkins@172.31.10.0 'docker run sunilraju99/my-webapp'
 	    }
       }
             
