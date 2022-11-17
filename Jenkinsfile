@@ -26,8 +26,8 @@ pipeline {
     stage ('publish image to dockerhub') {
 	 steps {
 	    // This step should not normally be used in your script. Consult the inline help for details.
-withDockerRegistry(credentialsId: 'ID_dockerhub', url: 'https://hub.docker.com/repository/docker/sunilraju99/') {
-	sh 'docker login -u sunilraju99 -p ${dockerhub1}'
+withDockerRegistry(credentialsId: 'dockerhub1', url: 'https://hub.docker.com/repository/docker/sunilraju99/') {
+	sh 'docker login -u sunilraju99 -p ${dockerhubpwd}'
     // some block
 }
 		sh 'docker push sunilraju99/my-webapp:1.0'
