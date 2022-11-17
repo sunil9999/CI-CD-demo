@@ -27,7 +27,7 @@ pipeline {
 	 steps {
 	    //withDockerResitry ([ credentialsId: "ID_dockerhub", url: "" ])
 		 //withDockerRegistry(credentialsId: 'ID_dockerhub', url: 'https://hub.docker.com/repository/docker/sunilraju99/my-webapp1')
-		 docker.withRegistry('https://hub.docker.com', 'Dockerhub'){
+		 withDockerRegistry('https://hub.docker.com', 'Dockerhub'){
 		sh 'docker push sunilraju99/my-webapp:1.0'
 		}
 		}
