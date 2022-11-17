@@ -39,11 +39,12 @@ pipeline {
    }
 	  }
  
-      //stage('Run Docker container on remote hosts') {
+      stage('Run Docker container on remote hosts') {
              
-            //steps {
-                //sh "docker -H ssh://jenkins@172.31.10.0 run -d -p 8003:8080 sunilraju99/my-webapp"
- 
+            steps {
+                sh "docker -H ssh://jenkins@172.31.10.0 run -d -p 8003:8080 sunilraju99/my-webapp"
+	    }
+      }
             
    }
 	  }
