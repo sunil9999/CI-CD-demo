@@ -35,6 +35,6 @@ withDockerRegistry(credentialsId: 'ID_dockerhub', url: 'https://hub.docker.com/r
 		}
 	}
 	
-  }
+  
 
     
