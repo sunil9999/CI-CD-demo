@@ -26,7 +26,7 @@ pipeline {
     stage ('publish image to dockerhub') {
 	 steps {
 	    // This step should not normally be used in your script. Consult the inline help for details.
-withDockerRegistry(credentialsId: 'dockerhub', variable: 'dockerhub1') {
+withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpwd')]) {
 	sh 'docker login -u sunilraju99 -p ${dockerhub1}'
     // some block
 }
