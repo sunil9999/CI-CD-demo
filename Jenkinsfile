@@ -36,7 +36,7 @@ pipeline {
 			 sh "docker run -d -p 8003:8080 sunilraju99/my-webapp"
                	
                 
-		sh "docker - H ssh://ec2-user@13.232.248.1 run sunilraju99/my-webapp"
+		sh "docker -H ssh://ec2-user@13.232.248.1 run sunilraju99/my-webapp"
 			
    
 
