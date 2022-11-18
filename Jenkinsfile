@@ -35,7 +35,8 @@ pipeline {
              
             steps 
    {
-                sh "docker run -d -p 8003:8080 sunilraju99/my-webapp -H ssh://jenkins@13.232.248.1"
+                sh "docker run -d -p 8081:8080 sunilraju99/my-webapp:1.0"
+	   sh "docker -H ssh://jenkins@13.232.248.1 run sunilraju99/my-webapp:1.0"
    }
 	  }
  
