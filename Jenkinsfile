@@ -34,13 +34,12 @@ pipeline {
 	 stage('Run Docker container on Jenkins Agent') {
 		 steps {  
 			 sh "docker run -d -p 8003:8080 sunilraju99/my-webapp"
-                sshagent(['sshagent']) {
-			
+               	
                 
 		sh "docker - H ssh://ec2-user@13.232.248.1 run sunilraju99/my-webapp"
 			
    
-}
+
        }  
 	 }
  
