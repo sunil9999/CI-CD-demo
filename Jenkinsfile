@@ -47,7 +47,7 @@ sh 'ssh -o StrictHostKeyChecking=no ubuntu@13.233.157.140 $(dockerRun)'
       }
             
    }
-	  }
+
 
 	
   
