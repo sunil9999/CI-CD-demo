@@ -38,6 +38,7 @@ pipeline {
 	
  
       stage ('Run Docker container on Jenkins Agent') {
+	      steps {
 def dockerRun = 'docker run -d -p 8003:8080 sunilraju99/my-webapp'
 sshagent(['sshagent']) {
 sh "ssh -o StrictHostKeyChecking=no ubuntu@13.233.157.140 ${dockerRun}"
@@ -47,6 +48,7 @@ sh "ssh -o StrictHostKeyChecking=no ubuntu@13.233.157.140 ${dockerRun}"
             
    }
 	  }
+}
 	
   
 
