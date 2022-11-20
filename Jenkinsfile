@@ -33,12 +33,10 @@ pipeline {
 		}
 	 stage('Run Docker container on Jenkins Agent') {
 		 steps {  
-			 sh "docker run -d -p 8003:8080 sunilraju99/my-webapp"
-               	
+			 sh "docker run -d -p 8003:8080 sunilraju99/my-webapp"         	
                 
-		sh "docker -H ssh://ec2-user@13.232.248.1 run sunilraju99/my-webapp"
+		
 			
-   
 
        }  
 	 }
@@ -47,7 +45,7 @@ pipeline {
              
             //steps {
                 //sh "docker -H ssh://jenkins@172.31.10.0 run sunilraju99/my-webapp"
-		    //sh "docker ssh://jenkins@13.232.248.1 run sunilraju99/my-webapp"
+		 
 	
             
    }
